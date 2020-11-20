@@ -8,6 +8,47 @@ html {
 	margin: 0 auto;
     border: 1px solid indigo;
     background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logo-side {
+    order: 1;
+    width: 35%;
+    border-right: 1px solid indigo;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#logo {
+    order: 1;
+    width: 50%;
+    border-right: 1px solid indigo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    order: 2;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info-side{
+    order: 2;
+    width: 55%;
+    border-left: 1px solid indigo;
+    display: flex;
+    align-items: center;
+}
+
+#info-side > a{
+    text-decoration: none;
 }
 
 #home-page {
