@@ -1,4 +1,3 @@
-
 #logo-side {
     order: 1;
     width: 35%;
@@ -57,10 +56,11 @@
     color: #333333;
     text-decoration: none;
     margin-right: 15px;
+    font-weight: bold;
 }
 
 #info-side-menu > a:hover{
-    color: #CAB9F1;
+    color: rebeccapurple;
 }
 
 #header-img {
