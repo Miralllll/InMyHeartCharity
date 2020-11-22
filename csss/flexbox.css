@@ -1,0 +1,33 @@
+.img-left {
+    order: 1;
+    width: 50%;
+    height: 100%;
+}
+
+.img-right {
+    order: 2;
+    width: 50%;
+    height: 100%;
+}
+
+.row-parent {
+    display: flex;
+    float: row;
+}
+
+.column-parent {
+    display: flex;
+    float: row;
+}
+
+.img-top {
+    order: 1;
+    height: 50%;
+    width: 100%;
+}
+
+.img-bottom {
+    order: 2;
+    height: 50%;
+    width: 100%;
+}
