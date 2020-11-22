@@ -20,14 +20,127 @@ body {
 
 #top-programs {
     order: 1;
+    height: 565px;
+    display: flex;
+	flex-direction: column;
+}
+
+#break {
+    order: 1;
+    height: 15px;
+    background-color: #333333;
+}
+
+#topfive-pictures {
+    order: 2;
     height: 450px;
-    border-top: 2px solid gray;
+    width: 100%;
+}
+
+#topfive-navbar {
+    order: 3;
+    height: 80px;
+    width: 100%;
+    background-color: #333333;
+    display: flex;
+    justify-content: stretch;
+}
+
+#project-navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#project-navbar > li {
+    float: left;
+}
+
+#project-navbar > li > a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 12px;
+    text-decoration: none;
+}
+
+#project-navbar > li > a:hover:not(.active) {
+    color: blueviolet;
+    text-shadow: 5px 5px 5px indigo;
+}
+  
+.active {
+    background-color: #333333;
+}
+
+#projects {
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.img-left {
+    order: 1;
+    width: 50%;
+    height: 100%;
+}
+
+.img-right {
+    order: 2;
+    width: 50%;
+    height: 100%;
+}
+
+.row-parent {
+    display: flex;
+    float: row;
+}
+
+.column-parent {
+    display: flex;
+    float: row;
+}
+
+.img-top {
+    order: 1;
+    height: 50%;
+    width: 100%;
+}
+
+.img-bottom {
+    order: 2;
+    height: 50%;
+    width: 100%;
+}
+
+.full-img {
+    height: 100%;
+    width: 100%;
+    outline: 2px solid white;
+    outline-offset: -2px;
 }
 
 #learn-more-request {
     order: 2;
-    height: 200px;
+    height: 350px;
+    width: 100%;
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
     border-top: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#learn-us {
+    text-align: center;
+    padding-right: 4.5em;
+    padding-left: 4.5em;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 2;
 }
 
 #partners {
