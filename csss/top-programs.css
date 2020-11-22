@@ -1,0 +1,50 @@
+#topfive-navbar {
+    order: 3;
+    height: 80px;
+    width: 100%;
+    background-color: #333333;
+    display: flex;
+    justify-content: stretch;
+}
+
+#project-navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#project-navbar > li {
+    float: left;
+}
+
+#project-navbar > li > a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 12px;
+    text-decoration: none;
+}
+
+#project-navbar > li > a:hover:not(.active) {
+    color: blueviolet;
+    text-shadow: 5px 5px 5px indigo;
+}
+  
+.active {
+    background-color: #333333;
+}
+
+#projects {
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.full-img {
+    height: 100%;
+    width: 100%;
+    outline: 2px solid white;
+    outline-offset: -2px;
+}
