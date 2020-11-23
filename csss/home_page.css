@@ -20,36 +20,27 @@ body {
 
 #top-programs {
     order: 1;
-    height: 565px;
+    height: 530px;
     display: flex;
 	flex-direction: column;
 }
 
-#break {
-    order: 1;
-    height: 15px;
-    background-color: #333333;
-}
-
-#topfive-pictures {
-    order: 2;
-    height: 450px;
-    width: 100%;
-}
-
 #learn-more-request {
     order: 2;
-    height: 350px;
+    height: 240px;
     width: 100%;
-    padding-top: 4.5em;
-    padding-bottom: 4.5em;
-    border-top: 2px solid gray;
+    background-color: whitesmoke;
+}
+
+.center-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
 }
 
-#learn-us {
+.center-text-big {
     text-align: center;
     padding-right: 4.5em;
     padding-left: 4.5em;
@@ -58,16 +49,19 @@ body {
     line-height: 2;
 }
 
-#partners {
-    order: 3;
-    height: 500px;
-    border-top: 2px solid gray;
+.center-text-small {
+    text-align: center;
+    padding-right: 4.5em;
+    padding-left: 4.5em;
+    font-weight: 400;
+    line-height: 2;
 }
 
 #enter-email {
-    order: 4;
-    height: 500px;
+    order: 3;
+    height: 250px;
     border-top: 2px solid gray;
+    background-image: url("../photos/sign-up.jpg");
 }
 
 #how-we-work {
