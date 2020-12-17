@@ -1,0 +1,39 @@
+#media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.fa {
+  padding: 20px;
+  font-size: 60px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: white;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+#media > a {
+    text-decoration: none;
+    color: white;
+}
+
+#media > a:hover {
+    opacity: 0.7;
+}
+
+#copywrite {
+    height: 100%;
+    background-color: #242526;
+    display: relative;
+}
+
+#contact {
+    display: inline-block;
+    margin: 10px;
+}

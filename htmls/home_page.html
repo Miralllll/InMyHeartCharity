@@ -1,6 +1,5 @@
 <html>
     <head>
-
         <title>In My Heart Charity</title>
     
         <link rel="stylesheet" type="text/css" href="../csss/home_page.css">
@@ -8,10 +7,13 @@
         <link rel="stylesheet" type="text/css" href="../csss/header.css">
         <link rel="stylesheet" type="text/css" href="../csss/flexbox.css">
         <link rel="stylesheet" type="text/css" href="../csss/top-programs.css">
+        <link rel="stylesheet" type="text/css" href="../csss/footer.css">
+
+        <link rel="stylesheet" type="text/css" href="../scsss/text-field.css">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <header id="info-bar">
@@ -36,14 +38,14 @@
                 </div> 
 
                 <div id="join">
-                    <button class="button-black font">JOIN US</button>
+                    <button class="button-white-indigo font">JOIN US</button>
                 </div>
 
                 <div id="bag">
                     <img id="header-img" src="../photos/sad-bag.jpg"/>
                 </div>
 
-                <div id="login">
+                <div id="login" class="link_black_shd">
                     <a class="font indigo-color" href="#">Login</a>
                 </div>
             </div>
@@ -69,7 +71,7 @@
                         </div>
 
                         <div class="img-bottom row-parent">
-                            <div class="img-left">
+                            <div class="img-left" style="float: right;">
                                 <img class="full-img" src="../photos/example-pic.jpg"/>
                             </div>
                             <div class="img-right">
@@ -80,34 +82,39 @@
                 </div>
 
                 <div id="topfive-navbar">
-                    <ul id="project-navbar">
-                        <li><div id="projects" class="font indigo-color">Explore Projects:</div></li>
-                        <li><a href="#">Featured</a></li>
-                        <li><a href="#">Newest</a></li>
-                        <li><a href="#">Nearly Funded</a></li>
-                        <li><a href="#">Child Protection</a></li>
-                        <li><a href="#">Disaster Response</a></li>
-                        <li><a href="#">Education</a></li>
+                    <div id="project-navbar">
+                        <div id="projects" class="font indigo-color">Explore Projects:</div>
+                        <a href="#">Featured</a>
+                        <a href="#">Newest</a>
+                        <a href="#">Nearly Funded</a>
+                        <a href="#">Child Protection</a>
+                        <a href="#">Disaster Response</a>
+                        <a href="#">Education</a>
 
-                        <li><a href="#">Climate Action</a></li>
-                        <li><a href="#">Food Security</a></li>
-                        <li><a href="#">Gender Equality</a></li>
-                        <li><a href="#">Covid-19</a></li>
-                        <li><a href="#">See All ></a></li>
-                    </ul>
+                        <a href="#">Climate Action</a>
+                        <a href="#">Food Security</a>
+                        <a href="#">Gender Equality</a>
+                        <a href="#">Covid-19</a>
+                        <a href="#">See All ></a>
+                    </div>
                 </div>
             </div>
 
             <div id="learn-more-request" class="center-container">
                 <p class ="font center-text-big"> <b class="indigo-color">In My Heart</b> connects nonprofits, donors, and companies in nearly every country in the world. We help fellow nonprofits access the funding, tools, training, and support they need to serve their communities.</p>
-                <button class="button-black font">Learn More</button>
+                <button class="button-white-indigo font">Learn More</button>
             </div>
 
             <div id="enter-email" class="center-container">
                 <p class ="font center-text-big" style="color:white;">Sign up for the GlobalGiving Newsletter</p>
-                <div class="center-text-big">
-                    <input type="email" maxlength="200" placeholder="you@example.com" required="" title="Email address">
-                    <button type="submit" class="">Subscribe</button>
+                <div class="center-text-big row-parent form-group">
+                    <div class="form__group field">
+                        <input type="email" class="form__field" maxlength="200" placeholder="you@example.com" required="" title="Email address">
+                        <label for="name" class="form__label">Name</label>
+                    </div>
+                    <div class="form__group img-right">
+                        <button class="button-white-indigo font" type="submit">Subscribe</button>
+                    </div>
                 </div>
             </div>
 
@@ -124,7 +131,20 @@
             </div>
         </div>
         <div id="footer">
-            
+            <div id="media">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#">Facebook</a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#">Instagram</a>
+            </div>
+            <div id="copywrite">
+                <span id="contact"> © Copyright 2000-2020 </span>
+                <span id="contact">  Questions? </span>
+                <div id="contact" class="link_black_shd">
+                    <a class="indigo-color" href="#">  Contact Us </a>
+                </div>
+                
+            </div>
         </div>
     </body>
 </html>
