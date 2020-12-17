@@ -17,7 +17,7 @@
 
 .column-parent {
     display: flex;
-    float: row;
+    float: column;
 }
 
 .img-top {

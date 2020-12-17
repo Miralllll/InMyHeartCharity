@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #info-bar {
@@ -83,15 +84,16 @@ body {
 }
 
 #footer {
-    height: 30px;
+    height: 70px;
 	margin: 0 auto;
 	background-color: black;
 	bottom: 0;
-	left: 0;
+    left: 0;
+    color: white;
 }
 
-/* buttttonns */
-.button-black {
+/* butons */
+.button-white-indigo {
     padding: 10px 15px;
     text-align: center;
     text-decoration: none;
@@ -103,7 +105,13 @@ body {
     border: 2px solid #555555;
 }
 
-.button-black:hover {
+.button-white-indigo:hover {
     background-color: #8C65D3;
     color: white;
-  }
+}
+
+.font {
+    font-size: x-large;
+}
+
+  

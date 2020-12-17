@@ -90,10 +90,10 @@
     margin-right: 30px;
 }
 
-#login > a {
+.link_black_shd > a {
     text-decoration: none;
 }
 
-#login > a:hover {
+.link_black_shd > a:hover {
     text-shadow: 2px 2px 1px #000000;
 }

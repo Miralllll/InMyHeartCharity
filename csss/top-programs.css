@@ -20,27 +20,26 @@
 }
 
 #project-navbar{
-    list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    width: 100%;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    padding: 14px;
+	justify-content: space-between;
 }
 
-#project-navbar > li {
-    float: left;
-}
-
-#project-navbar > li > a{
+#project-navbar > a{
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 12px;
+    padding: 0px 12px;
     text-decoration: none;
+    float: left;
 }
 
-#project-navbar > li > a:hover:not(.active) {
+#project-navbar > a:hover:not(.active) {
     color: blueviolet;
     text-shadow: 5px 5px 5px indigo;
 }
