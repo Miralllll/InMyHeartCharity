@@ -11,21 +11,46 @@
 
         <link rel="stylesheet" type="text/css" href="../scsss/text-field.css">
 
+        <script type="text/javascript" src="../jss/explore-projects.js"> </script>
+
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+        <div id="explore_show">
+
+        </div>
+
         <header id="info-bar">
             <div id="logo-side">
                 <div id="logo">
                     <img id="logo-img" src="../photos/logo.webp"/>
                 </div>
 
-                <div id="search">
+                <div id="search" onload="infoUpdate()">
                     <a class="font indigo-color" href="#">Explore Projects</a>
                     <img id="search-img" src="../photos/search.png"/>
                 </div>
+                <script>
+                    function infoUpdate(){
+                        alert('getCoords(hidden_elem).right');
+                        let element = document.getElementById("search");
+                        let hidden_elem = document.getElementById("explore_show");
+                        hidden_elem.style.right = getCoords(hidden_elem).right;
+                        alert(getCoords(hidden_elem).right);
+                    };
+                    function getCoords(elem) {
+                        let box = elem.getBoundingClientRect();
+                    
+                        return {
+                            top: box.top + window.pageYOffset,
+                            right: box.right + window.pageXOffset,
+                            bottom: box.bottom + window.pageYOffset,
+                            left: box.left + window.pageXOffset
+                        };
+                    };
+                </script>
             </div>
             <div id="info-side">
                 <div id="info-side-menu">
