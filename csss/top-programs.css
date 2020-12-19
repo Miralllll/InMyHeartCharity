@@ -81,6 +81,7 @@
 }
 
 .btn {
+    display: none;
     background-color: #8C65D3;
     color: white;
     font-size: 16px;
