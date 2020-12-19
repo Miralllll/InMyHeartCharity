@@ -11,46 +11,55 @@
 
         <link rel="stylesheet" type="text/css" href="../scsss/text-field.css">
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
         <script type="text/javascript" src="../jss/explore-projects.js"> </script>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body>
-        <div id="explore_show">
-
-        </div>
-
+    <body">
         <header id="info-bar">
             <div id="logo-side">
                 <div id="logo">
                     <img id="logo-img" src="../photos/logo.webp"/>
                 </div>
 
-                <div id="search" onload="infoUpdate()">
+                <div class="search">
                     <a class="font indigo-color" href="#">Explore Projects</a>
-                    <img id="search-img" src="../photos/search.png"/>
+                    <img onload="infoUpdate();" id="search-img" src="../photos/search.png"/>
                 </div>
-                <script>
-                    function infoUpdate(){
-                        alert('getCoords(hidden_elem).right');
-                        let element = document.getElementById("search");
-                        let hidden_elem = document.getElementById("explore_show");
-                        hidden_elem.style.right = getCoords(hidden_elem).right;
-                        alert(getCoords(hidden_elem).right);
-                    };
-                    function getCoords(elem) {
-                        let box = elem.getBoundingClientRect();
-                    
-                        return {
-                            top: box.top + window.pageYOffset,
-                            right: box.right + window.pageXOffset,
-                            bottom: box.bottom + window.pageYOffset,
-                            left: box.left + window.pageXOffset
-                        };
-                    };
-                </script>
+                <div id="explore_show">
+                    <div id="info-bar">
+                        <div class="search">
+                            <a class="font indigo-color" href="#">Explore Projects</a>
+                        </div>
+                        <div class="explore">
+                            <input type="text" class="form__field gray__border black__color" maxlength="200" placeholder="search" required="" title="search">
+                            <input type="image" src="../photos/search.png" name="saveForm" class="btTxt submit" id="explore-img" />
+                        </div>
+                    </div>
+                    <div id="proj_info">Find a vetted, verified project that you want to make a donation to:</div>
+                    <div id="three_col_info">
+                        <div class="col">
+                            Top Themes
+                        </div>
+                        <div class="col">
+                            Top Countries
+                        </div>
+                        <div class="col remove_link_stuff">
+                            <a href="#">Top Funded </a>
+                            <a href="#">Projects Newest </a>
+                            <a href="#">Projects Projects </a>
+                            <a href="#">Closest to Goal </a>
+                            <a href="#">Staff Favorites </a>
+                            <a href="#">Most Effective </a>
+                            <a href="#">Site Visit Verified </a>
+                            <a href="#">Top Ranked Projects</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="info-side">
                 <div id="info-side-menu">
@@ -134,8 +143,8 @@
                 <p class ="font center-text-big" style="color:white;">Sign up for the GlobalGiving Newsletter</p>
                 <div class="center-text-big row-parent form-group">
                     <div class="form__group field">
-                        <input type="email" class="form__field" maxlength="200" placeholder="you@example.com" required="" title="Email address">
-                        <label for="name" class="form__label">Name</label>
+                        <input type="email" class="form__field white__border white__color" maxlength="200" placeholder="you@example.com" required="" title="Email address">
+                        <label for="name" class="form__label white__color">Name</label>
                     </div>
                     <div class="form__group img-right">
                         <button class="button-white-indigo font" type="submit">Subscribe</button>

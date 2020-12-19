@@ -2,14 +2,25 @@
   position: relative;
   padding: 15px 0 0; }
 
+.white__border {
+  border: 0;
+  border-bottom: 2px solid white; }
+
+.gray__border {
+  border: 0;
+  border-bottom: 2px solid gray; }
+
+.black__color {
+  color: black; }
+
+.white__color {
+  color: white; }
+
 .form__field {
   font-family: inherit;
   width: 100%;
-  border: 0;
-  border-bottom: 2px solid #fff;
   outline: 0;
   font-size: 1.3rem;
-  color: #fff;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s; }
@@ -25,13 +36,11 @@
   top: 0;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
-  color: #fff; }
+  font-size: 1rem; }
 
 .form__field:focus ~ .form__label {
   color: pink; }
 
-/* reset input */
 .form__field:required, .form__field:invalid {
   box-shadow: none; }
 
