@@ -99,6 +99,7 @@
 }
 
 #explore_show {
+    z-index: 2;
     display: none;
     width: 400px; 
     height: 400px; 

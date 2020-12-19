@@ -59,3 +59,38 @@
     outline: 2px solid white;
     outline-offset: -2px;
 }
+
+.container {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    background-color: #8C65D3;
+    color: white;
+    font-size: 16px;
+    padding: 5px 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.full-img:hover {
+    filter: blur(4px);
+}
