@@ -58,8 +58,18 @@ body {
     line-height: 2;
 }
 
-#enter-email {
+#general-work{
+    background: mediumpurple;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     order: 3;
+}
+
+#enter-email {
+    order: 5;
     height: 250px;
     border-top: 2px solid gray;
     background-image: url("../photos/sign-up.jpg");
