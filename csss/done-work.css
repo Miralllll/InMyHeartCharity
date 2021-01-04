@@ -13,3 +13,77 @@
     margin: 3 !important;
 }
 
+#how-it-works-row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#how-it-works-row > .out_of_4{
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+
+#how-it-works-row > .out_of_4 > .div_text {
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    left: 0;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#how-it-works-row > .out_of_4 > .div_link {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    left: 0;
+    top: 75%;
+    display: flex;
+    justify-content: center;
+}
+
+#how-it-works-row > .out_of_4 > .div_link > a {
+    color: #FEAE51FF;
+    text-decoration: none;
+}
+
+#how-it-works-row > .out_of_4 > .div_link > a:hover {
+    color: #FF6F61FF;
+    text-decoration: overline;
+}
+
+#how-it-works-row > .out_of_4 > div > p{
+    width: 100%;
+    height: 100%;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    text-align: center;
+    color: white;
+}
+
+#how-it-works-row > .out_of_4 > .img_4 {
+    height: 100%;
+    width: 100%;
+}
+
+#how-it-works-label {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#how-it-works-label > p {
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+}
