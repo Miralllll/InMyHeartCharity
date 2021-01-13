@@ -69,8 +69,17 @@
 
 .bottom-left {
     position: absolute;
-    bottom: 8px;
-    left: 16px;
+    bottom: 0px;
+    left: 0px
+}
+
+.bottom-left > a{
+    padding: 10px;
+    margin: 0;
+    float: left;
+    font-size: smaller;
+    text-decoration: none;
+    color: white;
 }
 
 .centered {
