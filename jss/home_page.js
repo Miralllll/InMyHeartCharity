@@ -8,12 +8,19 @@ async function getRandomTopPrograms() {
   const jsonRes = converterXMLToJson(xml);
   var topFive = document.querySelectorAll("div.container");
   for (let i = 0; i < topFive.length; i += 1) {
-    console.log(jsonRes.projects.project[i]);
-    var imgLink = jsonRes.projects.project[i].imageLink;
-    var title = jsonRes.projects.project[i].title;
     var projectId = jsonRes.projects.project[i].id;
+    const res = await fetch(
+      "https://api.globalgiving.org/api/public/projectservice/projects/" +
+        projectId +
+        "?api_key=27c355cb-4b3d-417d-a001-bb8623b0ab89"
+    );
+    const result = await res.text();
+    let parser = new DOMParser();
+    let xml = parser.parseFromString(result, "text/xml");
+    const jsonResProj = converterXMLToJson(xml);
+    var imgLink = jsonResProj.project.image.imagelink[4].url;
+    var title = jsonResProj.project.title;
     topFive[i].querySelector("img.full-img").src = imgLink;
-    console.log(title);
     topFive[i]
       .querySelector("div.bottom-left")
       .querySelector("a").innerHTML = title;
@@ -216,6 +223,11 @@ function homePageDisplay() {
             </div> -->
         </div>
   `;
+  currentMainRemove();
   document.querySelector("div.main").innerHTML = home_page_html;
   checkElement("#topfive-pictures");
+}
+
+function currentMainRemove() {
+  document.querySelector("div.main").innerHTML = "";
 }
