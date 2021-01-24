@@ -30,9 +30,9 @@ async function getRandomTopPrograms() {
     topFive[i]
       .querySelector("div.bottom-left")
       .querySelector("a").href = projectLink;
-    // console.log(
-    //   topFive[i].querySelector("div.centered").querySelector("button").onclick
-    // );
+    topFive[i]
+      .querySelector("div.centered")
+      .querySelector("button").href = projectId;
   }
 }
 
@@ -42,11 +42,11 @@ function rafAsync() {
   });
 }
 
-function checkElement(selector) {
+function checkElement(selector, fn) {
   if (document.querySelector(selector) === null) {
-    return rafAsync().then(() => checkElement(selector));
+    return rafAsync().then(() => checkElement(selector, fn));
   } else {
-    getRandomTopPrograms();
+    fn();
     return Promise.resolve(true);
   }
 }
@@ -63,7 +63,7 @@ function homePageDisplay() {
                             <a href="#">here</a>
                         </div>
                         <div class="centered">
-                            <button href="#" class="btn" id="btn_1">DONATE</button>
+                            <button href="" class="btn" id="btn_1">DONATE</button>
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@ function homePageDisplay() {
                                     <a href="#">here</a>
                                 </div>
                                 <div class="centered">
-                                    <button onclick="" class="btn" id="btn_2">DONATE</button>
+                                    <button href="" class="btn" id="btn_2">DONATE</button>
                                 </div>
                             </div>
                             <div class="img-right container">
@@ -84,7 +84,7 @@ function homePageDisplay() {
                                     <a href="#">here</a>
                                 </div>
                                 <div class="centered">
-                                    <button onclick="" class="btn" id="btn_3">DONATE</button>
+                                    <button href="" class="btn" id="btn_3">DONATE</button>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ function homePageDisplay() {
                                     <a href="#">here</a>
                                 </div>
                                 <div class="centered">
-                                    <button onclick="" class="btn" id="btn_4">DONATE</button>
+                                    <button href="" class="btn" id="btn_4">DONATE</button>
                                 </div>
                             </div>
                             <div class="img-right container">
@@ -105,7 +105,7 @@ function homePageDisplay() {
                                     <a href="#">here</a>
                                 </div>
                                 <div class="centered">
-                                    <button onclick="" class="btn" id="btn_5">DONATE</button>
+                                    <button href="" class="btn" id="btn_5">DONATE</button>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@ function homePageDisplay() {
   `;
   currentMainRemove();
   document.querySelector("div.main").innerHTML = home_page_html;
-  checkElement("#topfive-pictures");
+  checkElement("#topfive-pictures", getRandomTopPrograms);
 }
 
 function currentMainRemove() {

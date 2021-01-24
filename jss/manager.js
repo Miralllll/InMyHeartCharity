@@ -4,11 +4,14 @@ function main() {
 
 function pageListeners() {
   // example for page changes
-  //   document
-  //     .querySelector("something")
-  //     .addEventListener("click", function () {
-  //       // display this
-  //     });
+  checkElement("#topfive-pictures", function () {
+    const buttons = document.querySelectorAll("button.btn");
+    for (const button of buttons) {
+      button.addEventListener("click", function (event) {
+        projectDisplay(button.href);
+      });
+    }
+  });
 }
 
 pageListeners();
