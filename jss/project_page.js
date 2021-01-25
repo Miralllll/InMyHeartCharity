@@ -25,34 +25,34 @@ async function getProjectInfo(id) {
 
 function projectDisplay(id) {
   const project_html = `
-  <div id="project-info">
-  <div class="project-general">
-      <div class="three_div">
-          <div class="margin-add">
-              <div class="threeiaa">
-                  <p>ggg</p>
-              </div>
-              <div class="threeiaa">
-                  <p>ggg</p>
-              </div>
-              <div class="threeiaa">
-                  <p>ggg</p>
-              </div>
-          </div>
-          
-      </div>
-      <div class="three_div">
-          <div id="title">
-              <p>ggg</p>
-          </div>
-      </div>
-      <div class="three_div">
-          <div id="by-who">
-              <p>ggg</p>
-          </div>
-      </div>
-  </div>
-</div>
+        <div id="project-info">
+            <div class="project-general">
+                <div class="three_div">
+                    <div class="margin-add">
+                        <div class="threeiaa">
+                            <p>ggg</p>
+                        </div>
+                        <div class="threeiaa">
+                            <p>ggg</p>
+                        </div>
+                        <div class="threeiaa">
+                            <p>ggg</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="three_div">
+                    <div id="title">
+                        <p>ggg</p>
+                    </div>
+                </div>
+                <div class="three_div">
+                    <div id="by-who">
+                        <p>ggg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
   currentMainRemove();
   document.querySelector("div.main").innerHTML = project_html;
