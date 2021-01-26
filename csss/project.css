@@ -47,3 +47,53 @@
 .threeiaa {
   color: rebeccapurple;
 }
+
+/* slider */
+.image-slider {
+  order: 2;
+  background-color: white;
+  width: 60%;
+  margin: 80px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-slider .left-slide,
+.image-slider .right-slide {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: #444444;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  top: 50%;
+  cursor: pointer;
+  margin-top: -20px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.image-slider .left-slide:hover,
+.image-slider .right-slide:hover {
+  box-shadow: 0px 0px 10px black;
+  background-color: blueviolet;
+}
+
+.image-slider .left-slide {
+  left: 30px;
+}
+
+.image-slider .right-slide {
+  right: 30px;
+}
+
+.image-slider .slider-items .curr-active img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.image-slider .slider-items .curr-active {
+  position: relative;
+}

@@ -23,6 +23,74 @@ async function getProjectInfo(id) {
     jsonRes.project.organization.name;
 }
 
+var index = 0;
+var totalSlides = 0;
+var currProjId = 0;
+
+async function getProjectGallery(id) {
+  const res = await fetch(
+    "https://api.globalgiving.org/api/public/projectservice/projects/" +
+      id +
+      "/imagegallery?api_key=27c355cb-4b3d-417d-a001-bb8623b0ab89"
+  );
+  const result = await res.text();
+  var parser = new DOMParser();
+  var xml = parser.parseFromString(result, "text/xml");
+  const jsonRes = converterXMLToJson(xml);
+  totalSlides = jsonRes.images.image.length;
+  if (totalSlides == undefined) {
+    document.querySelector("div.right-slide").style.display = "none";
+    document.querySelector("div.left-slide").style.display = "none";
+    document.querySelector("div.curr-active").querySelector("img").src =
+      jsonRes.images.image.imagelink[4].url;
+  } else {
+    currProjId = id;
+    index = 0;
+    displayCurrImage(0);
+  }
+}
+
+async function displayCurrImage(index) {
+  const res = await fetch(
+    "https://api.globalgiving.org/api/public/projectservice/projects/" +
+      currProjId +
+      "/imagegallery?api_key=27c355cb-4b3d-417d-a001-bb8623b0ab89"
+  );
+  const result = await res.text();
+  var parser = new DOMParser();
+  var xml = parser.parseFromString(result, "text/xml");
+  const jsonRes = converterXMLToJson(xml);
+  document.querySelector("div.curr-active").querySelector("img").src =
+    jsonRes.images.image[index].imagelink[4].url;
+}
+
+checkElement("div.right-slide", function () {
+  document.querySelector("div.right-slide").addEventListener(
+    "click",
+    function () {
+      index++;
+      if (index == totalSlides) {
+        index = 0;
+      }
+      displayCurrImage(index);
+    },
+    false
+  );
+});
+checkElement("div.left-slide", function () {
+  document.querySelector("div.left-slide").addEventListener(
+    "click",
+    function () {
+      if (index == 0) {
+        index = totalSlides - 1;
+      } else {
+        index--;
+      }
+      displayCurrImage(index);
+    },
+    false
+  );
+});
 function projectDisplay(id) {
   const project_html = `
         <div id="project-info">
@@ -52,9 +120,19 @@ function projectDisplay(id) {
                     </div>
                 </div>
             </div>
+            <div class="image-slider">
+                <div class="slider-items">
+                    <div class="curr-active">
+                        <img src=""/>
+                    </div>
+                </div>
+                <div class="left-slide">&lt;</div>
+                <div class="right-slide">&gt;</div>
+            </div>
         </div>
     `;
   currentMainRemove();
   document.querySelector("div.main").innerHTML = project_html;
   getProjectInfo(id);
+  getProjectGallery(id);
 }
