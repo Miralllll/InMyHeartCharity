@@ -31,13 +31,13 @@ async function getProjectInfo(id) {
     "$" + jsonRes.project.remaining;
   document.querySelector("div.filled").style.width =
     (jsonRes.project.funding / jsonRes.project.goal) * 100 + "%";
-  document.querySelector("p.summary").innerHTML = jsonRes.project.summary;
-  console.log(jsonRes.project.activites);
-  document.querySelector("p.challenge").innerHTML = jsonRes.project.need;
-  document.querySelector("p.solution").innerHTML = jsonRes.project.activities;
-  document.querySelector("p.impact").innerHTML = jsonRes.project.longTermImpact;
-  document.querySelector("div.project-container").querySelector("a").href =
-    jsonRes.project.additionalDocumentation;
+  // document.querySelector("p.summary").innerHTML = jsonRes.project.summary;
+  // console.log(jsonRes.project.activites);
+  // document.querySelector("p.challenge").innerHTML = jsonRes.project.need;
+  // document.querySelector("p.solution").innerHTML = jsonRes.project.activities;
+  // document.querySelector("p.impact").innerHTML = jsonRes.project.longTermImpact;
+  // document.querySelector("div.project-container").querySelector("a").href =
+  //   jsonRes.project.additionalDocumentation;
 }
 
 var index = 0;
@@ -113,17 +113,16 @@ checkElement("div.left-slide", function () {
   );
 });
 
-async function displaySummary(id) {
+async function jsonret(id) {
   const res = await fetch(
     "https://api.globalgiving.org/api/public/projectservice/projects/" +
       id +
-      "/summary?api_key=27c355cb-4b3d-417d-a001-bb8623b0ab89"
+      "?api_key=27c355cb-4b3d-417d-a001-bb8623b0ab89"
   );
   const result = await res.text();
   var parser = new DOMParser();
   var xml = parser.parseFromString(result, "text/xml");
   const jsonRes = converterXMLToJson(xml);
-  console.log(jsonRes.project);
 }
 
 checkElement("a.icon", function () {
@@ -136,6 +135,10 @@ checkElement("a.icon", function () {
     }
   });
 });
+
+function currProjContainerRemove(){
+  document.querySelector("div.project-container").innerHTML = "";
+}
 
 function projectDisplay(id) {
   const project_html = `
@@ -190,19 +193,23 @@ function projectDisplay(id) {
                           <div class="stayed-money"> <span> </span> to go </div>
                       </div>
                       <div id="join">
-                          <button class="new-some button-white-indigo font donateBtn">Donate Once</button>
+                          <button class="new-some button-white-indigo font donateBtn" style="font-size: large;">Donate Once</button>
                       </div>
                       <div id="join">
-                          <button class="new-some button-white-indigo font donateBtn">Donate Monthly</button>
+                          <button class="new-some button-white-indigo font donateBtn" style="font-size: large;">Donate Monthly</button>
+                      </div>
+                      <div id="join">
+                          <button class="new-some button-white-indigo font donateBtn" style="font-size: large;">
+                            <i class="fa fa-heart" style="color: rgb(68, 11, 11); padding: 0; margin: 0; width: 30px; margin-right: 6px;"></i>
+                            Add Project to Favorites</button>
                       </div>
                   </div>
               </div>
             </div>
             <div class="wrapper-proj-nav">
                 <div class="proj-nav" id="myTopnav">
-                  <a href=href.split("#")[0]"#story" class="story">STORY</a>
+                  <a href="#story" class="story">STORY</a>
                   <a href="#reports">REPORTS</a>
-                  <a href="#photos">PHOTOS</a>
                   <a href="#share">SHARE</a>
                   <a href="javascript:void(0);" class="icon">
                     <i class="fa fa-bars" style="margin: 0; padding: 0; font-size: 22px;"></i>
@@ -210,16 +217,6 @@ function projectDisplay(id) {
                 </div>
             </div>
             <div class="project-container">
-              <p class="pr-title"> Summary </p>
-              <p class="summary text"> </p>
-              <p class="pr-title"> Challenge </p>
-              <p class="challenge text"> </p>
-              <p class="pr-title"> Solution </p>
-              <p class="solution text"> </p>
-              <p class="pr-title"> Long-Term Impact </p>
-              <p class="impact text"> </p>
-              <p class="pr-title"> Additional Documentation </p>
-              <a class="text" href="#document"> This project has provided additional documentation in a PDF file (projdoc.pdf). <a>
             </div>
         </div>
     `;
@@ -227,5 +224,4 @@ function projectDisplay(id) {
   document.querySelector("div.main").innerHTML = project_html;
   getProjectInfo(id);
   getProjectGallery(id);
-  displaySummary(id);
 }

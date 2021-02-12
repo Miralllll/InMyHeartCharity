@@ -5,8 +5,8 @@ function hashHandler() {
   const urlObj = new URL(window.location.href);
   if (location.hash === "#story") {
     UrlMapping["#story"]();
-  } else if (location.hash === "#report") {
-    UrlMapping["#report"]();
+  } else if (location.hash === "#reports") {
+    UrlMapping["#reports"]();
   } else if (location.hash === "#share") {
     UrlMapping["#share"]();
   } else if (urlObj.searchParams.has("id")) {
@@ -27,12 +27,12 @@ var UrlMapping = {
     homePageDisplay();
   },
   "#story": function () {
-    projectDisplay(new URL(window.location.href).searchParams.get("id"));
+    new Story(new URL(window.location.href).searchParams.get("id"));
   },
   "?id=": function () {
     window.location.replace(new URL(window.location.href).toString() + "#story");
   },
-  "#report": function () {
+  "#reports": function () {
     projectDisplay(new URL(window.location.href).searchParams.get("id"));
   },
   "#share": function () {
