@@ -1,26 +1,43 @@
-function main() {
-  homePageDisplay();
+window.addEventListener("hashchange", hashHandler, false);
+window.addEventListener("load", hashHandler, false);
+
+function hashHandler() {
+  const urlObj = new URL(window.location.href);
+  if (location.hash === "#story") {
+    UrlMapping["#story"]();
+  } else if (location.hash === "#report") {
+    UrlMapping["#report"]();
+  } else if (location.hash === "#share") {
+    UrlMapping["#share"]();
+  } else if (urlObj.searchParams.has("id")) {
+    let id = urlObj.searchParams.get("id");
+    UrlMapping["?id="]();
+  } else if (location.hash === "") {
+    UrlMapping[""]();
+  } else if (location.hash === "#") {
+    UrlMapping["#"]();
+  }
 }
 
-function pageListeners() {
-  checkElement("#topfive-pictures", function () {
-    const buttons = document.querySelectorAll("button.btn");
-    for (const button of buttons) {
-      button.addEventListener("click", function (event) {
-        window.location.replace(
-          window.location.href.split("#")[0] + "#" + button.href
-        );
-        projectDisplay(button.href);
-      });
-    }
-    const links_under = document.querySelectorAll("div.bottom-left");
-    for (const link_under of links_under) {
-      link_under.querySelector("a").addEventListener("click", function (event) {
-        projectDisplay(link_under.querySelector("a").href.split("#")[1]);
-      });
-    }
-  });
-}
+var UrlMapping = {
+  "": function () {
+    homePageDisplay();
+  },
+  "#": function () {
+    homePageDisplay();
+  },
+  "#story": function () {
+    projectDisplay(new URL(window.location.href).searchParams.get("id"));
+  },
+  "?id=": function () {
+    window.location.replace(new URL(window.location.href).toString() + "#story");
+  },
+  "#report": function () {
+    projectDisplay(new URL(window.location.href).searchParams.get("id"));
+  },
+  "#share": function () {
+    projectDisplay(new URL(window.location.href).searchParams.get("id"));
+  },
+};
 
-pageListeners();
-main();
+window.onhashchange = hashHandler;

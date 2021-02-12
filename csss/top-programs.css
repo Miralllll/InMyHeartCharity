@@ -90,7 +90,7 @@
 }
 
 .btn {
-  display: none;
+  display: inline-block;
   background-color: #8c65d3;
   color: white;
   font-size: 16px;
@@ -99,4 +99,5 @@
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+  visibility: hidden;
 }

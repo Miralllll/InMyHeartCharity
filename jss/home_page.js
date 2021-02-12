@@ -24,15 +24,12 @@ async function getRandomTopPrograms() {
     topFive[i]
       .querySelector("div.bottom-left")
       .querySelector("a").innerHTML = title;
-    var projectLink =
-      "file:///C:/Users/99555/Desktop/WebProj/InMyHeartCharity/htmls/home_page.html#" +
-      projectId;
+    const urlStr = window.location.href;
+    const urlObj = new URL(urlStr);
+    urlObj.searchParams.set("id", projectId);
     topFive[i]
       .querySelector("div.bottom-left")
-      .querySelector("a").href = projectLink;
-    topFive[i]
-      .querySelector("div.centered")
-      .querySelector("button").href = projectId;
+      .querySelector("a").href = urlObj.toString();
   }
 }
 
@@ -51,19 +48,62 @@ function checkElement(selector, fn) {
   }
 }
 
-checkElement("#topfive-pictures", function () {
-  const buttonHolders = document.querySelectorAll("div.centered");
-  for (const buttonHolder of buttonHolders) {
-    buttonHolder.parentElement.addEventListener("mousemove", function (event) {
-      buttonHolder.parentElement.querySelector("img").style.filter =
-        "blur(3px)";
-    });
-    buttonHolder.parentElement.addEventListener("mouseout", function (event) {
-      buttonHolder.parentElement.querySelector("img").style.filter =
-        "blur(0px)";
-    });
-  }
-});
+function blurring() {
+  checkElement("#topfive-pictures", function () {
+    const buttonHolders = document.querySelectorAll("div.centered");
+    for (const buttonHolder of buttonHolders) {
+      buttonHolder.parentElement.addEventListener(
+        "mousemove",
+        function (event) {
+          buttonHolder.parentElement.querySelector("img").style.filter =
+            "blur(3px)";
+        }
+      );
+      buttonHolder.parentElement.addEventListener("mouseout", function (event) {
+        buttonHolder.parentElement.querySelector("img").style.filter =
+          "blur(0px)";
+      });
+    }
+  });
+}
+
+function buttonShow() {
+  checkElement("#topfive-pictures", function () {
+    const buttonHolders = document.querySelectorAll("div.centered");
+    for (const buttonHolder of buttonHolders) {
+      buttonHolder.parentElement.addEventListener(
+        "mousemove",
+        function (event) {
+          buttonHolder.querySelector("button").style.visibility = "visible";
+        }
+      );
+      buttonHolder.parentElement.addEventListener("mouseout", function (event) {
+        buttonHolder.querySelector("button").style.visibility = "hidden";
+      });
+    }
+  });
+}
+
+function pageListeners() {
+  checkElement("#topfive-pictures", function () {
+    const buttons = document.querySelectorAll("button.btn");
+    for (const button of buttons) {
+      button.addEventListener("click", function (event) {
+        window.location.replace(
+          button.parentElement.parentElement
+            .querySelector("div.bottom-left")
+            .querySelector("a").href
+        );
+      });
+    }
+    const links_under = document.querySelectorAll("div.bottom-left");
+    for (const link_under of links_under) {
+      link_under.querySelector("a").addEventListener("click", function (event) {
+        window.location.replace(new URL(window.location.href).toString());
+      });
+    }
+  });
+}
 
 function homePageDisplay() {
   const home_page_html = `
@@ -76,8 +116,8 @@ function homePageDisplay() {
                         <div class="bottom-left">
                             <a href="#">here</a>
                         </div>
-                        <div class="centered">
-                            <button href="" class="btn" id="btn_1">DONATE</button>
+                        <div class="centered" id="centered">
+                            <button href="#" class="btn" id="btn_1">DONATE</button>
                         </div>
                     </div>
 
@@ -88,8 +128,8 @@ function homePageDisplay() {
                                 <div class="bottom-left">
                                     <a href="#">here</a>
                                 </div>
-                                <div class="centered">
-                                    <button href="" class="btn" id="btn_2">DONATE</button>
+                                <div class="centered" id="centered">
+                                    <button href="#" class="btn" id="btn_2">DONATE</button>
                                 </div>
                             </div>
                             <div class="img-right container">
@@ -97,8 +137,8 @@ function homePageDisplay() {
                                 <div class="bottom-left">
                                     <a href="#">here</a>
                                 </div>
-                                <div class="centered">
-                                    <button href="" class="btn" id="btn_3">DONATE</button>
+                                <div class="centered" id="centered">
+                                    <button href="#" class="btn" id="btn_3">DONATE</button>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +149,8 @@ function homePageDisplay() {
                                 <div class="bottom-left">
                                     <a href="#">here</a>
                                 </div>
-                                <div class="centered">
-                                    <button href="" class="btn" id="btn_4">DONATE</button>
+                                <div class="centered" id="centered">
+                                    <button href="#" class="btn" id="btn_4">DONATE</button>
                                 </div>
                             </div>
                             <div class="img-right container">
@@ -118,8 +158,8 @@ function homePageDisplay() {
                                 <div class="bottom-left">
                                     <a href="#">here</a>
                                 </div>
-                                <div class="centered">
-                                    <button href="" class="btn" id="btn_5">DONATE</button>
+                                <div class="centered" id="centered">
+                                    <button href="#" class="btn" id="btn_5">DONATE</button>
                                 </div>
                             </div>
                         </div>
@@ -240,6 +280,9 @@ function homePageDisplay() {
   currentMainRemove();
   document.querySelector("div.main").innerHTML = home_page_html;
   checkElement("#topfive-pictures", getRandomTopPrograms);
+  buttonShow();
+  blurring();
+  pageListeners();
 }
 
 function currentMainRemove() {

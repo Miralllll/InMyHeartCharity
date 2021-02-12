@@ -200,7 +200,7 @@ function projectDisplay(id) {
             </div>
             <div class="wrapper-proj-nav">
                 <div class="proj-nav" id="myTopnav">
-                  <a href="#story" class="story">STORY</a>
+                  <a href=href.split("#")[0]"#story" class="story">STORY</a>
                   <a href="#reports">REPORTS</a>
                   <a href="#photos">PHOTOS</a>
                   <a href="#share">SHARE</a>

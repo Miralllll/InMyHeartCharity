@@ -1,15 +1,18 @@
-$(document).ready(function () {
-  $(".search").mouseenter(function () {
-    infoUpdate();
-    $("#explore_show").stop().show();
-  });
+function exploreListen() {
+  $(document).ready(function () {
+    $(".search").mouseenter(function () {
+      infoUpdate();
+      $("#explore_show").stop().show();
+    });
 
-  $("#explore_show").mouseleave(function () {
-    if (!$("#explore_show").is(":hover")) {
-      $("#explore_show").hide();
-    }
+    $("#explore_show").mouseleave(function () {
+      if (!$("#explore_show").is(":hover")) {
+        $("#explore_show").hide();
+      }
+    });
   });
-});
+}
+exploreListen();
 
 function infoUpdate() {
   let element = document.querySelector("#logo-side > div.search");
