@@ -85,33 +85,35 @@ async function displayCurrImage(index) {
     .querySelector("img").src = jsonRes.images.image[index].imagelink[4].url;
 }
 
-checkElement("div.right-slide", function () {
-  document.querySelector("div.right-slide").addEventListener(
-    "click",
-    function () {
-      index++;
-      if (index == totalSlides) {
-        index = 0;
-      }
-      displayCurrImage(index);
-    },
-    false
-  );
-});
-checkElement("div.left-slide", function () {
-  document.querySelector("div.left-slide").addEventListener(
-    "click",
-    function () {
-      if (index == 0) {
-        index = totalSlides - 1;
-      } else {
-        index--;
-      }
-      displayCurrImage(index);
-    },
-    false
-  );
-});
+function sliderListeners() {
+  checkElement("div.right-slide", function () {
+    document.querySelector("div.right-slide").addEventListener(
+      "click",
+      function () {
+        index++;
+        if (index == totalSlides) {
+          index = 0;
+        }
+        displayCurrImage(index);
+      },
+      false
+    );
+  });
+  checkElement("div.left-slide", function () {
+    document.querySelector("div.left-slide").addEventListener(
+      "click",
+      function () {
+        if (index == 0) {
+          index = totalSlides - 1;
+        } else {
+          index--;
+        }
+        displayCurrImage(index);
+      },
+      false
+    );
+  });
+}
 
 async function jsonret(id) {
   const res = await fetch(
@@ -125,18 +127,20 @@ async function jsonret(id) {
   const jsonRes = converterXMLToJson(xml);
 }
 
-checkElement("a.icon", function () {
-  document.querySelector("a.icon").addEventListener("click", function () {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "proj-nav") {
-      x.className += " responsive";
-    } else {
-      x.className = "proj-nav";
-    }
+function projectContainerListener(params) {
+  checkElement("a.icon", function () {
+    document.querySelector("a.icon").addEventListener("click", function () {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "proj-nav") {
+        x.className += " responsive";
+      } else {
+        x.className = "proj-nav";
+      }
+    });
   });
-});
+}
 
-function currProjContainerRemove(){
+function currProjContainerRemove() {
   document.querySelector("div.project-container").innerHTML = "";
 }
 
@@ -222,6 +226,8 @@ function projectDisplay(id) {
     `;
   currentMainRemove();
   document.querySelector("div.main").innerHTML = project_html;
+  sliderListeners();
+  projectContainerListener();
   getProjectInfo(id);
   getProjectGallery(id);
 }
