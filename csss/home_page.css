@@ -1,132 +1,131 @@
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 #info-bar {
-    height: 90px;
-	width: 100%;
-	margin: 0 auto;
-    display: flex;
-    flex-direction: row;
+  min-height: 90px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
 #home-page {
-    margin: 0 auto;
-	width: 100%;
-	height: 1800px;
-	display: flex;
-	flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 1800px;
+  display: flex;
+  flex-direction: column;
 }
 
 #top-programs {
-    order: 1;
-    height: 530px;
-    display: flex;
-	flex-direction: column;
+  order: 1;
+  min-height: 530px;
+  display: flex;
+  flex-direction: column;
 }
 
 #learn-more-request {
-    order: 2;
-    height: 240px;
-    width: 100%;
-    background-color: whitesmoke;
+  order: 2;
+  min-height: 240px;
+  width: 100%;
+  background-color: whitesmoke;
 }
 
 .center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 4.5em;
-    padding-bottom: 4.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4.5em;
+  padding-bottom: 4.5em;
 }
 
 .center-text-big {
-    text-align: center;
-    padding-right: 4.5em;
-    padding-left: 4.5em;
-    font-weight: 400;
-    font-size: 1.5em;
-    line-height: 2;
+  text-align: center;
+  padding-right: 4.5em;
+  padding-left: 4.5em;
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 2;
 }
 
 .center-text-small {
-    text-align: center;
-    padding-right: 4.5em;
-    padding-left: 4.5em;
-    font-weight: 400;
-    line-height: 2;
+  text-align: center;
+  padding-right: 4.5em;
+  padding-left: 4.5em;
+  font-weight: 400;
+  line-height: 2;
 }
 
-#general-work{
-    background: mediumpurple;
-    height: 150px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    order: 3;
+#general-work {
+  background: mediumpurple;
+  min-height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  order: 3;
 }
 
 #enter-email {
-    order: 6;
-    height: 250px;
-    border-top: 2px solid gray;
-    /* background-image: url("../photos/sign-up.jpg"); */
-    background-color: #ffd79d;
+  order: 6;
+  min-height: 250px;
+  border-top: 2px solid gray;
+  /* background-image: url("../photos/sign-up.jpg"); */
+  background-color: #ffd79d;
 }
 
 #how-it-works {
-    order: 5;
-    height: 450px;
-    border-top: 2px solid gray;
-    position: relative;
+  order: 5;
+  height: 450px;
+  border-top: 2px solid gray;
+  position: relative;
 }
 
 #gift-card {
-    order: 7;
-    height: 400px;
-    border-top: 2px solid gray;
+  order: 7;
+  height: 400px;
+  border-top: 2px solid gray;
 }
 
 #news {
-    order: 8;
-    height: 500px;
-    border-top: 2px solid gray;
+  order: 8;
+  min-height: 500px;
+  border-top: 2px solid gray;
 }
 
 #footer {
-    height: 70px;
-	margin: 0 auto;
-	background-color: black;
-	bottom: 0;
-    left: 0;
-    color: white;
+  min-height: 40px;
+  margin: 0 auto;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  color: white;
 }
 
 /* butons */
 .button-white-indigo {
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
 }
 
 .button-white-indigo:hover {
-    background-color: #8C65D3;
-    color: white;
+  background-color: #8c65d3;
+  color: white;
 }
 
 .font {
-    font-size: x-large;
+  font-size: x-large;
 }
 
-.indigo-color{
-    color: #8C65D3;
+.indigo-color {
+  color: #8c65d3;
 }
-  

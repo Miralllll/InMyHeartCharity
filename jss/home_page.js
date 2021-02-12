@@ -230,9 +230,6 @@ function homePageDisplay() {
                 </div>
             </div>
             <div id="how-it-works">
-                <div id="how-it-works-label">
-                    <p>-- How It Works --</p>
-                </div>
                 <div id="how-it-works-row">
                     <div class="out_of_4">
                         <div class="div_text"><p>
@@ -264,6 +261,9 @@ function homePageDisplay() {
                         <div class="div_link"><a href="#"> OUR IMPACT </a></div>
                         <img class="img_4" src="../photos/temporary_for_4.jpeg">
                     </div>
+                </div>
+                <div id="how-it-works-label">
+                    <p>-- How It Works --</p>
                 </div>
             </div>
             

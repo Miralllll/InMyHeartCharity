@@ -27,16 +27,19 @@ var UrlMapping = {
     homePageDisplay();
   },
   "#story": function () {
-    new Story(new URL(window.location.href).searchParams.get("id"));
+    let story = new Story();
+    story.projectDisplay(new URL(window.location.href).searchParams.get("id"));
   },
   "?id=": function () {
     window.location.replace(new URL(window.location.href).toString() + "#story");
   },
   "#reports": function () {
-    projectDisplay(new URL(window.location.href).searchParams.get("id"));
+    let reports = new Reports();
+    reports.projectDisplay(new URL(window.location.href).searchParams.get("id"));
   },
   "#share": function () {
-    projectDisplay(new URL(window.location.href).searchParams.get("id"));
+    let share = new Share();
+    share.projectDisplay(new URL(window.location.href).searchParams.get("id"));
   },
 };
 

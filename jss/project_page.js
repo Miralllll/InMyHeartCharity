@@ -31,13 +31,6 @@ async function getProjectInfo(id) {
     "$" + jsonRes.project.remaining;
   document.querySelector("div.filled").style.width =
     (jsonRes.project.funding / jsonRes.project.goal) * 100 + "%";
-  // document.querySelector("p.summary").innerHTML = jsonRes.project.summary;
-  // console.log(jsonRes.project.activites);
-  // document.querySelector("p.challenge").innerHTML = jsonRes.project.need;
-  // document.querySelector("p.solution").innerHTML = jsonRes.project.activities;
-  // document.querySelector("p.impact").innerHTML = jsonRes.project.longTermImpact;
-  // document.querySelector("div.project-container").querySelector("a").href =
-  //   jsonRes.project.additionalDocumentation;
 }
 
 var index = 0;
@@ -212,9 +205,9 @@ function projectDisplay(id) {
             </div>
             <div class="wrapper-proj-nav">
                 <div class="proj-nav" id="myTopnav">
-                  <a href="#story" class="story">STORY</a>
-                  <a href="#reports">REPORTS</a>
-                  <a href="#share">SHARE</a>
+                  <a href="#story" class="chosen story">STORY</a>
+                  <a href="#reports" class="reports">REPORTS</a>
+                  <a href="#share" class="share">SHARE</a>
                   <a href="javascript:void(0);" class="icon">
                     <i class="fa fa-bars" style="margin: 0; padding: 0; font-size: 22px;"></i>
                   </a>
@@ -230,4 +223,17 @@ function projectDisplay(id) {
   projectContainerListener();
   getProjectInfo(id);
   getProjectGallery(id);
+}
+
+function colorControl(className) {
+  let aasss = document
+    .querySelector("div.wrapper-proj-nav")
+    .querySelector("div.proj-nav")
+    .querySelectorAll("a");
+  for (let i = 0; i < 3; i++) {
+    if (aasss[i].classList.contains("chosen"))
+      aasss[i].classList.remove("chosen");
+    if (aasss[i].classList.contains(className))
+      aasss[i].classList.add("chosen");
+  }
 }

@@ -212,7 +212,7 @@
   color: rgb(54, 53, 53);
 }
 
-.proj-nav a.story {
+.proj-nav a.chosen {
   background-color: slateblue;
   color: white;
 }
@@ -263,9 +263,14 @@
   margin-bottom: 50px;
 }
 
-.project-container > .text {
+.project-container > .text,
+.mmmm {
   font: initial;
   color: black;
+}
+
+.project-container a {
+  color: indigo !important;
 }
 
 .hr-line {
