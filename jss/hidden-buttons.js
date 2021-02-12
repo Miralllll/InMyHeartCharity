@@ -1,7 +1,12 @@
 $(document).ready(function () {
   for (let i = 1; i <= 5; i++) {
     $("#cont_" + i.toString()).mouseenter(function () {
-      infoUpdate();
+      $("#btn_" + i.toString())
+        .stop()
+        .show();
+    });
+
+    $("#btn_" + i.toString()).mouseenter(function () {
       $("#btn_" + i.toString())
         .stop()
         .show();

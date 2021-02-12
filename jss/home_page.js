@@ -51,6 +51,20 @@ function checkElement(selector, fn) {
   }
 }
 
+checkElement("#topfive-pictures", function () {
+  const buttonHolders = document.querySelectorAll("div.centered");
+  for (const buttonHolder of buttonHolders) {
+    buttonHolder.parentElement.addEventListener("mousemove", function (event) {
+      buttonHolder.parentElement.querySelector("img").style.filter =
+        "blur(3px)";
+    });
+    buttonHolder.parentElement.addEventListener("mouseout", function (event) {
+      buttonHolder.parentElement.querySelector("img").style.filter =
+        "blur(0px)";
+    });
+  }
+});
+
 function homePageDisplay() {
   const home_page_html = `
           <div id="home-page">
@@ -90,7 +104,7 @@ function homePageDisplay() {
                         </div>
 
                         <div class="img-bottom row-parent">
-                            <div class="img-left container"style="float: right;">
+                            <div class="img-left container" style="float: right;">
                                 <img class="full-img" id="cont_4"  src=""/>
                                 <div class="bottom-left">
                                     <a href="#">here</a>

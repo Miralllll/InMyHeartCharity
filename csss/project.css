@@ -267,3 +267,13 @@
   font: initial;
   color: black;
 }
+
+.hr-line {
+  order: 100;
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: black;
+  height: 1px;
+}

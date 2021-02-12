@@ -1,106 +1,102 @@
 #break {
-    order: 1;
-    height: 15px;
-    background-color: #333333;
+  order: 1;
+  height: 15px;
+  background-color: #333333;
 }
 
 #topfive-pictures {
-    order: 2;
-    height: 450px;
-    width: 100%;
+  order: 2;
+  height: 450px;
+  width: 100%;
 }
 
 #topfive-navbar {
-    order: 3;
-    height: 80px;
-    width: 100%;
-    background-color: #333333;
-    display: flex;
-    justify-content: stretch;
+  order: 3;
+  height: 80px;
+  width: 100%;
+  background-color: #333333;
+  display: flex;
+  justify-content: stretch;
 }
 
-#project-navbar{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    padding: 14px;
-	justify-content: space-between;
+#project-navbar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 14px;
+  justify-content: space-between;
 }
 
-#project-navbar > a{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 0px 12px;
-    text-decoration: none;
-    float: left;
+#project-navbar > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 12px;
+  text-decoration: none;
+  float: left;
 }
 
 #project-navbar > a:hover:not(.active) {
-    color: blueviolet;
-    text-shadow: 5px 5px 5px indigo;
+  color: blueviolet;
+  text-shadow: 5px 5px 5px indigo;
 }
-  
+
 .active {
-    background-color: #333333;
+  background-color: #333333;
 }
 
 #projects {
-    margin-left: 15px;
-    margin-right: 5px;
+  margin-left: 15px;
+  margin-right: 5px;
 }
 
 .full-img {
-    height: 100%;
-    width: 100%;
-    outline: 2px solid white;
-    outline-offset: -2px;
+  height: 100%;
+  width: 100%;
+  outline: 2px solid white;
+  outline-offset: -2px;
 }
 
 .container {
-    z-index: 1;
-    position: relative;
-    text-align: center;
-    color: white;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 .bottom-left {
-    position: absolute;
-    bottom: 0px;
-    left: 0px
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
 
-.bottom-left > a{
-    padding: 10px;
-    margin: 0;
-    float: left;
-    font-size: smaller;
-    text-decoration: none;
-    color: white;
+.bottom-left > a {
+  padding: 10px;
+  margin: 0;
+  float: left;
+  font-size: smaller;
+  text-decoration: none;
+  color: white;
 }
 
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .btn {
-    display: none;
-    background-color: #8C65D3;
-    color: white;
-    font-size: 16px;
-    padding: 5px 40px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.full-img:hover {
-    filter: blur(4px);
+  display: none;
+  background-color: #8c65d3;
+  color: white;
+  font-size: 16px;
+  padding: 5px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
 }

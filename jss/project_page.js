@@ -165,6 +165,7 @@ function projectDisplay(id) {
                         By <span>ggg</span>
                     </div>
                 </div>
+                <hr class="hr-line">
             </div>
             <div class="wrapper-image-donate">
               <div class="image-donate">
