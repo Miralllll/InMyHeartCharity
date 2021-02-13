@@ -1,0 +1,81 @@
+.explore-pg-cont {
+  min-height: 100px;
+  width: 100%;
+  background-color: rgb(107, 83, 83);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explore-pg-cont > p {
+  text-align: center;
+  color: white;
+  font-size: 5vw;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchtxt {
+  background: rgb(184, 179, 179);
+  min-width: 100px;
+}
+
+.field input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+.multiselect {
+  min-width: 200px;
+  font-size: 14px;
+}
+
+.RGselectBox, .THselectBox {
+  position: relative;
+  margin-right: 25px;
+}
+
+.RGselectBox a, .THselectBox a {
+  width: 100%;
+}
+.RGselectBox a > option, .THselectBox a > option{
+  border: 1px indigo solid;
+  text-align: left;
+  padding-left: 7px;
+  font-weight: normal !important;
+  padding: 10px 15px;
+}
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.RGcheckboxes, .THcheckboxes  {
+  display: none;
+  position: absolute;
+  max-height: 300px;
+  left: 0;
+  top: 0;
+  border: 1px indigo solid;
+  background-color: white;
+  overflow: auto;
+}
+
+.RGcheckboxes label, .THcheckboxes label {
+  display: block;
+  text-align: initial;
+}
+
+.RGcheckboxes label:hover, .THcheckboxes label:hover {
+  background-color: gray;
+}

@@ -129,3 +129,13 @@ body {
 .indigo-color {
   color: #8c65d3;
 }
+
+.three_col_info > div > a{
+  display: block; 
+  font: initial;
+  color: black;
+}
+
+.three_col_info > div > a:hover{
+  color: #8c65d3;
+}

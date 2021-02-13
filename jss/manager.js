@@ -3,15 +3,30 @@ window.addEventListener("load", hashHandler, false);
 
 function hashHandler() {
   const urlObj = new URL(window.location.href);
-  if (location.hash === "#story") {
-    UrlMapping["#story"]();
+  console.log(urlObj.toString());
+  if(location.hash === "#search") {
+    let size = urlObj.searchParams.get("size");
+    let pagenum = urlObj.searchParams.get("nextPage");
+    let q = urlObj.searchParams.get("keywords");
+    let country = urlObj.searchParams.get("countryRegion");
+    let theme = urlObj.searchParams.get("theme");
+    UrlMapping["#search"](size, pagenum, q, country, theme);
+  } else if (location.hash === "#story") {
+
+    UrlMapping["#story"](new URL(window.location.href).searchParams.get("id"));
+
   } else if (location.hash === "#reports") {
-    UrlMapping["#reports"]();
+
+    UrlMapping["#reports"](new URL(window.location.href).searchParams.get("id"));
+
   } else if (location.hash === "#share") {
-    UrlMapping["#share"]();
+
+    UrlMapping["#share"](new URL(window.location.href).searchParams.get("id"));
+
   } else if (urlObj.searchParams.has("id")) {
-    let id = urlObj.searchParams.get("id");
-    UrlMapping["?id="]();
+
+    window.location.replace(new URL(window.location.href).toString() + "#story");
+
   } else if (location.hash === "") {
     UrlMapping[""]();
   } else if (location.hash === "#") {
@@ -26,21 +41,24 @@ var UrlMapping = {
   "#": function () {
     homePageDisplay();
   },
-  "#story": function () {
+  "#story": function (id) {
     let story = new Story();
-    story.projectDisplay(new URL(window.location.href).searchParams.get("id"));
+    story.projectDisplay(id);
   },
-  "?id=": function () {
-    window.location.replace(new URL(window.location.href).toString() + "#story");
+  "?id=": function (link) {
+
   },
-  "#reports": function () {
+  "#reports": function (id) {
     let reports = new Reports();
-    reports.projectDisplay(new URL(window.location.href).searchParams.get("id"));
+    reports.projectDisplay(id);
   },
-  "#share": function () {
+  "#share": function (id) {
     let share = new Share();
-    share.projectDisplay(new URL(window.location.href).searchParams.get("id"));
+    share.projectDisplay(id);
   },
+  "#search": function (size, pageNum, q, country, themer) {
+    new ExplorePG(size, pageNum, q, country, themer).searchResultDisplay();
+  }
 };
 
 window.onhashchange = hashHandler;
