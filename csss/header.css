@@ -139,7 +139,8 @@
 }
 
 .col {
-    width: 30%;
+    width: 40%;
+    margin-left: 10%;
 }
 
 .remove_link_stuff > a {

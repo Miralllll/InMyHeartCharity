@@ -93,6 +93,8 @@ class ExplorePG {
         <a href="#"> Clear All </a>
       </div>
     </div>
+    <div style="width: 100%; min-height:100px;">
+      </div>
         `;
     currentMainRemove();
     document.querySelector("div.main").innerHTML = search_html;
