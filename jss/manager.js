@@ -10,6 +10,8 @@ function hashHandler() {
     let q = urlObj.searchParams.get("keywords");
     let country = urlObj.searchParams.get("countryRegion");
     let theme = urlObj.searchParams.get("theme");
+    console.log('aeeeeeeeeee');
+    console.log(country, theme);
     UrlMapping["#search"](size, pagenum, q, country, theme);
   } else if (location.hash === "#story") {
 

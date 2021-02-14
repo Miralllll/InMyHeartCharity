@@ -1,7 +1,7 @@
 .explore-pg-cont {
   min-height: 100px;
   width: 100%;
-  background-color: rgb(107, 83, 83);
+  background-color: indigo;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,19 +102,78 @@
 	margin-top: -10px;
 }
 
-.items .item {
+.itemssother {
+  display: flex;
+	flex-wrap: wrap;
+}
+
+.contacoonta {
+  border-bottom: 1px solid black;
+}
+
+.items .item{
 	flex: 1 0 200px;
   box-sizing: border-box;
-  background: rgb(209, 183, 183);
-  border: 1px rgb(107, 83, 83) solid;
+  background: rgb(158, 126, 182);
+  border: 1px rgb(117, 97, 121) solid;
   color: white;
   padding: 10px;
 	margin-left: 10px;
 	margin-top: 10px;
 }
 
+.itemssother .item {
+  flex: 1 0 200px;
+  box-sizing: border-box;
+}
+
 .keyyyys {
   width: 80%;
-  min-height: 100px;
+  min-height: 60px;
   margin: 0 auto;
+  background-color: rgb(236, 226, 243);
+  padding: 0 3px;
+}
+
+.clearAll:hover{
+  color: blueviolet;
+}
+
+.list-cards {
+  padding-top: 50px;
+  width: 80%;
+  max-height: auto;
+  margin: 0 auto;
+}
+
+.list-cards > div > p {
+  margin: 0;
+  display: block;
+  max-height: 100%;
+  width: auto;
+}
+
+.list-cards > div > p > span {
+  font: initial;
+  color: black;
+  display: block;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+
+.list-cards > div {
+  border: 1px solid gray;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2.5vw;
+}
+
+.respon-img {
+  float: left !important;
+  width: auto;
+  max-width: auto;
+  height: auto;
+  max-height: 250px;
+  margin-right: 20px;
 }
