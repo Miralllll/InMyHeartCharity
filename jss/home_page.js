@@ -1,4 +1,13 @@
 var htmllll = ``;
+
+
+function infoUpdate() {
+  let element = document.querySelector("#logo-side > div.search");
+  let hidden_elem = document.getElementById("explore_show");
+  left = getCoords(element).left;
+  hidden_elem.style.left = "" + left + "px";
+}
+
 async function getRandomTopPrograms() {
   const res = await fetch(
     "https://api.globalgiving.org/api/public/projectservice/featured/projects/summary?api_key=27c355cb-4b3d-417d-a001-bb8623b0ab89"

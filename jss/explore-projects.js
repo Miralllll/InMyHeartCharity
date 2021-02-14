@@ -48,21 +48,6 @@ function linksListeners() {
 
 getExploreCols();
 
-function exploreListen() {
-  $(document).ready(function () {
-    $(".search").mouseenter(function () {
-      infoUpdate();
-      $("#explore_show").stop().show();
-    });
-
-    $("#explore_show").mouseleave(function () {
-      if (!$("#explore_show").is(":hover")) {
-        $("#explore_show").hide();
-      }
-    });
-  });
-}
-exploreListen();
 
 function infoUpdate() {
   let element = document.querySelector("#logo-side > div.search");
@@ -70,6 +55,34 @@ function infoUpdate() {
   left = getCoords(element).left;
   hidden_elem.style.left = "" + left + "px";
 }
+
+function exploreListen() {
+  checkElement("img.infoupdatecl", function () {
+      infoUpdate();
+  });
+  checkElement("div.search", function () {
+    document.querySelector("div.search").addEventListener("mouseover", function name(params) {
+      infoUpdate();
+      document.getElementById("explore_show").style.display = "block";
+    });
+    document.getElementById("explore_show").addEventListener("mouseleave", function name(params) {
+      document.getElementById("explore_show").style.display = "none";
+    })
+  });
+  // $(document).ready(function () {
+  //   $(".search").mouseenter(function () {
+  //     infoUpdate();
+  //     $("#").stop().show();
+  //   });
+
+  //   $("#explore_show").mouseleave(function () {
+  //     if (!$("#explore_show").is(":hover")) {
+  //       $("#explore_show").hide();
+  //     }
+  //   });
+  // });
+}
+exploreListen();
 
 function getCoords(elem) {
   let box = elem.getBoundingClientRect();
