@@ -267,8 +267,15 @@ class ExplorePG {
     document.querySelector("div.list-cards").parentElement.innerHTML +=
     `
     <div class="center" style="padding-bottom: 75px;">
-        <button class="new-some button-white-indigo font donateBtn" style="font-size: large;">MORE PROGRAMS</button>
-    </div>`
+        <button class="new-some button-white-indigo font moreProgramss" style="font-size: large;">MORE PROGRAMS</button>
+    </div>`;
+    let thisssa = this;
+    document.querySelector("button.moreProgramss").addEventListener("click", function name(params) {
+      var urlObj = new URL(window.location.href);
+      urlObj.searchParams.set("nextPage", (new Number(thisssa.pageNum) + 1));
+      window.location.replace(urlObj.toString());
+    });
+    console.log(this.pageNum);
   }
 
   searchedWithWords(){
@@ -357,6 +364,7 @@ class ExplorePG {
     // = jsonRes.projects.project;
     console.log('jsonRes.search');
     console.log(jsonRes.search);
+    //document.querySelector("div.list-cards").innerHTML += htmllll;
     if(jsonRes.search.response == "") {
 
     } else
@@ -380,12 +388,15 @@ class ExplorePG {
             </div>
       </div>
        `;
+      // htmllll += exampleCard;
       document.querySelector("div.list-cards").innerHTML += exampleCard;
+      this.pageNum = new Number(this.pageNum) + 1
 
     } else {
       var containers = document.querySelector("div.list-cards");
       for(let i=0; i<jsonRes.search.response.projects.project.length; i++) {
-            document.querySelector("div.list-cards").innerHTML += `
+        this.pageNum = new Number(this.pageNum) + 1;
+            let exampleCard = `
           <div>
              <p> 
               <image class="respon-img" src="` + jsonRes.search.response.projects.project[i].image.imagelink[3].url + `" />
@@ -404,6 +415,8 @@ class ExplorePG {
             </div>
           </div>
             `;
+            //htmllll += exampleCard;
+            document.querySelector("div.list-cards").innerHTML += exampleCard;
       }
     }
     this.addButtonsListeners();

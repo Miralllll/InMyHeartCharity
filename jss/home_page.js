@@ -1,3 +1,4 @@
+var htmllll = ``;
 async function getRandomTopPrograms() {
   const res = await fetch(
     "https://api.globalgiving.org/api/public/projectservice/featured/projects/summary?api_key=27c355cb-4b3d-417d-a001-bb8623b0ab89"
@@ -166,7 +167,7 @@ function homePageDisplay() {
                     </div>
                 </div>
 
-                <div id="topfive-navbar">
+                <!-- <div id="topfive-navbar">
                     <div id="project-navbar">
                         <div id="projects" class="font indigo-color">Explore Projects:</div>
                         <a href="#">Featured</a>
@@ -183,6 +184,7 @@ function homePageDisplay() {
                         <a href="#">See All ></a>
                     </div>
                 </div>
+                -->
             </div>
 
             <div id="learn-more-request" class="center-container">

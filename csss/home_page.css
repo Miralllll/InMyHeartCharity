@@ -21,7 +21,7 @@ body {
 
 #top-programs {
   order: 1;
-  min-height: 530px;
+  height: auto;
   display: flex;
   flex-direction: column;
 }

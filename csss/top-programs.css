@@ -12,7 +12,8 @@
 
 #topfive-navbar {
   order: 3;
-  height: 80px;
+  /* height: 80px; */
+  height: 0;
   width: 100%;
   background-color: #333333;
   display: flex;
