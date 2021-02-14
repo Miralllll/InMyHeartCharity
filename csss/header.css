@@ -1,6 +1,6 @@
 #logo-side {
     order: 1;
-    width: 35%;
+    width: 40%;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -33,14 +33,14 @@
 }
 
 #search-img {
-    margin-left: 10px;
+    margin-left: 15px;
     height: 20px;
     width: 22px;
 }
 
 #info-side{
     order: 2;
-    width: 65%;
+    width: 60%;
     display: flex;
     flex-direction: row-reverse;
     justify-content: right;
@@ -55,7 +55,7 @@
 #info-side-menu > a{
     color: #333333;
     text-decoration: none;
-    margin-right: 15px;
+    margin-right: 20px;
     font-weight: bold;
 }
 

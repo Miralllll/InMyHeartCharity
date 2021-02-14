@@ -13,10 +13,18 @@
   font-size: 5vw;
 }
 
+.ffonta {
+  font-size: 1.4vw;
+}
+
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.centerrr {
+  align-items: center;
 }
 
 .searchtxt {
@@ -25,25 +33,24 @@
 }
 
 .field input[type="text"] {
-  padding: 10px;
   font-size: 17px;
-  float: left;
   width: 80%;
   background: #f1f1f1;
 }
 
 .multiselect {
-  min-width: 200px;
   font-size: 14px;
 }
 
 .RGselectBox, .THselectBox {
   position: relative;
   margin-right: 25px;
+  min-width: 300px;
 }
 
 .RGselectBox a, .THselectBox a {
   width: 100%;
+  min-width: 300px;
 }
 .RGselectBox a > option, .THselectBox a > option{
   border: 1px indigo solid;
@@ -54,6 +61,7 @@
 }
 .overSelect {
   position: absolute;
+  min-width: 300px;
   left: 0;
   right: 0;
   top: 0;
@@ -74,8 +82,39 @@
 .RGcheckboxes label, .THcheckboxes label {
   display: block;
   text-align: initial;
+  padding-bottom: 4px;
+  min-width: 300px;
+}
+
+.RGcheckboxes label > input, .THcheckboxes label > input{
+  height: 20px;
+  width: 20px;
 }
 
 .RGcheckboxes label:hover, .THcheckboxes label:hover {
   background-color: gray;
+}
+
+.items {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-top: -10px;
+}
+
+.items .item {
+	flex: 1 0 200px;
+  box-sizing: border-box;
+  background: rgb(209, 183, 183);
+  border: 1px rgb(107, 83, 83) solid;
+  color: white;
+  padding: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.keyyyys {
+  width: 80%;
+  min-height: 100px;
+  margin: 0 auto;
 }
